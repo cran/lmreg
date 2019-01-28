@@ -1,5 +1,5 @@
-\name{proj}
-\alias{proj}
+\name{projector}
+\alias{projector}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Orthogonal projector of a matrix
@@ -8,7 +8,7 @@ Orthogonal projector of a matrix
 Computes the orthogonal projection matrix for the column space of a given matrix.
 }
 \usage{
-proj(M, tol=sqrt(.Machine$double.eps))
+projector(M, tol=sqrt(.Machine$double.eps))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -31,7 +31,7 @@ Debasis Sengupta <shairiksengupta@gmail.com>, Jinwen Qiu <qjwsnow_ctw@hotmail.co
 }
 
 \examples{
-proj(matrix(3,3,3))
+projector(matrix(3,3,3))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

@@ -8,7 +8,7 @@ ANOVA table for linear hypothesis in a linear model
 Prepares Analysis of Variance table for testing a general linear hypothesis in a linear model
 }
 \usage{
-ganova(y, X, A, xi)
+ganova(y, X, A, xi, tol=sqrt(.Machine$double.eps))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -24,6 +24,9 @@ Coefficient matrix (A.beta = xi is the null hypothesis to be tested).
   \item{xi}{
 A vector (A.beta = xi is the null hypothesis to be tested).
 }
+\item{tol}{
+A relative tolerance to detect zero singular values while computing generalized inverse, in case the model matrix is rank deficient (default = sqrt(.Machine$double.eps)).
+ }
 }
 
 \value{
@@ -39,10 +42,10 @@ Debasis Sengupta <shairiksengupta@gmail.com>, Jinwen Qiu <qjwsnow_ctw@hotmail.co
 \examples{
 data(denim)
 attach(denim)
-X <- cbind(1,binaries(Denim),binaries(Laundry))
-A <- rbind(c(0,1,-1,0,0,0,0),c(0,1,0,-1,0,0,0))
-xi <- c(0,0)
-ganova(Abrasion,X,A,xi)
+X <- cbind(1,binaries(Denim), binaries(Laundry))
+A <- rbind(c(0,1,-1,0,0,0,0), c(0,1,0,-1,0,0,0))
+xi <- c(0, 0)
+ganova(Abrasion, X, A, xi)
 detach(denim)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
