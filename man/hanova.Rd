@@ -37,8 +37,8 @@ Debasis Sengupta <shairiksengupta@gmail.com>, Jinwen Qiu <qjwsnow_ctw@hotmail.co
 
 \examples{
 data(birthwt)
-lmbw <- lm(BWT ~ SMOKE+factor(RACE), data = birthwt)
-lm1 <- lm(BWT ~ SMOKE, data = birthwt)
+lmbw <- lm(bwt ~ smoke+factor(race), data = birthwt)
+lm1 <- lm(bwt ~ smoke, data = birthwt)
 hanova(lm1,lmbw)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

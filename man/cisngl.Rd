@@ -50,12 +50,13 @@ Debasis Sengupta <shairiksengupta@gmail.com>, Jinwen Qiu <qjwsnow_ctw@hotmail.co
 }
 
 \examples{
+library(MASS)
 data(birthwt)
 attach(birthwt)
-X <- cbind(1, SMOKE, binaries(RACE))
+X <- cbind(1, smoke, binaries(race))
 p <- c(0,1,0,0,0)
-cisngl(BWT, X, p, 0.05, type = "upper", tol = 1e-10)
-cisngl(BWT, X, p, 0.05, type = "both", tol = 1e-10) 
+cisngl(bwt, X, p, 0.05, type = "upper", tol = 1e-10)
+cisngl(bwt, X, p, 0.05, type = "both", tol = 1e-10) 
 detach(birthwt)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
